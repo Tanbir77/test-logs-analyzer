@@ -19,7 +19,8 @@ namespace TestLogsAnalyzer.Lib
             }
             catch (FileNotFoundException e)
             {
-                Console.WriteLine(e.Message);
+                doc = null;
+                Console.WriteLine(e.Message+"Rebuild your solution");
             }
         }
 

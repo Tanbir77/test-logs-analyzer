@@ -10,8 +10,11 @@ namespace TestLogsAnalyzer.Lib
         static void Main(string[] args)
         {
             XmlDocument doc = FileManager.GetDocument(new LogFile(), ConfigurationManager.AppSettings["logFileName"]);
-            ILogAnalyzer analyser = new LogAnalyzer();
-            analyser.ShowNonPassingTestsList<XmlDocument>(doc);
+            if (doc != null)
+            {
+                ILogAnalyzer analyser = new LogAnalyzer();
+                analyser.ShowNonPassingTestsList<XmlDocument>(doc);
+            }
             Console.ReadKey();
         }
     }

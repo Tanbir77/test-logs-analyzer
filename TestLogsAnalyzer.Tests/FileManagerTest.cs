@@ -19,7 +19,7 @@ namespace TestLogsAnalyzer.Tests
                 {
                     LoadContentString = (fileName) => { new XmlDocument().Load(Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData), "SampleTrxXMLTestLogFile.trx")); }
                 };
-                Assert.IsNotNull(FileManager.GetDocument(new LogFile(),"dummyFile"));
+                Assert.IsNull(FileManager.GetDocument(new LogFile(),"dummyFile"));
             }
 
         }
